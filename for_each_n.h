@@ -1,8 +1,13 @@
-template<class StartIterator,int n,class Function>
-Function for_each_n(StartIterator start,int n, Function f){
-    for(int i = 0;i < n;++i,++start){  //equallivent of comparing while (∗p!=0)
+#include <utility>
+#include <iostream>
+template<class StartIterator,class Size,class Function>
+std::pair<StartIterator,Function> for_each_n(StartIterator start,Size n, Function f){
+    for(Size i = 0;i < n;++i,++start){  //equallivent of comparing while (∗p!=0)
         f(*start);
     }
-    return f;    
+    return {start,f};    
 
 };
+
+
+/*implemeted at first using i as an int  returned the f*/

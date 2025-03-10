@@ -9,7 +9,7 @@ Function for_each(StartIteratorstart,EndIterator end, Function f){
 
 };
 
-//returning f in case it is a lambda function or a functor
+//returning f in case it is a lambda function or a functor or those could contain a value that shouldnt be lost 
 
 
 /*
