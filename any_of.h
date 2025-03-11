@@ -1,5 +1,5 @@
 template <class InputIt,class Predicate>
-constexpr InputIt any_of(InputIt begin,InputIt end, Predicate p){
+constexpr InputIt find_if(InputIt begin,InputIt end, Predicate p){
     for(;*begin!=end;++begin){
         if(p(*begin)){
             return begin;
