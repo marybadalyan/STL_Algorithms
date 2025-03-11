@@ -1,5 +1,5 @@
-template <class StartIt,class EndIt, class Predicate>
-constexpr bool any_of(StartIt begin,EndIt end ,Predicate p){
+template <class InputIt,class Predicate>
+constexpr InputIt any_of(InputIt begin,InputIt end, Predicate p){
     for(;*begin!=end;++begin){
         if(p(*begin)){
             return begin;
@@ -10,7 +10,7 @@ constexpr bool any_of(StartIt begin,EndIt end ,Predicate p){
 
 
 
-template <class StartIt,class EndIt, class Predicate>
-constexpr bool any_of(StartIt begin,EndIt end ,Predicate p){
+template <class InputIt,class Predicate>
+constexpr bool any_of(InputIt begin,InputIt end, Predicate p){
     return any_of(begin,end,p) != end;
 }
