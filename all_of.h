@@ -7,3 +7,6 @@ constexpr bool all_of(StartIt begin,EndIt end ,Predicate p){
     }
     return true;
 }
+
+//the stl implementation uses find_if_not for all_of to minimize code 
+//repetition but becouse we dont have it implemented yet well use our own 
