@@ -9,5 +9,3 @@ std::pair<StartIterator,Function> for_each_n(StartIterator start,Size n, Functio
 
 };
 
-
-/*implemeted at first using i as an int  returned the f*/

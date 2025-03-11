@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "concepts": "cpp",
+        "memory": "cpp",
+        "ranges": "cpp",
+        "span": "cpp",
+        "xmemory": "cpp",
+        "xutility": "cpp"
+    }
+}
