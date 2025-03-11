@@ -1,5 +1,5 @@
-template <class StartIt,class EndIt, class Predicate>
-constexpr bool find_if_not(StartIt begin,EndIt end ,Predicate p){
+template <class InputIt,class Predicate>
+constexpr InputIt find_if_not(InputIt begin,InputIt end,Predicate p){
     for(;*begin!=end;++begin){
         if(!p(*begin)){
             return begin;
