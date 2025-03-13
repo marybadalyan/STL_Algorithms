@@ -48,7 +48,7 @@ namespace stlAlg{
 
 
     template<class StartIterator,class EndIterator,class Function>
-    Function for_each(StartIteratorstart,EndIterator end, Function f){
+    Function for_each(StartIterator start,EndIterator end, Function f){
         for(;start!=end;++start){  //equallivent of comparing while (∗p!=0)
             f(*start);
         }
@@ -103,7 +103,7 @@ namespace stlAlg{
 
         InputIt1 end = end1;
         while(true){
-            InputIt1 new_end = stlAlg::search(InputIt1 begin1,InputIt1 end1,InputIt2 begin2,InputIt2 end2);
+            InputIt1 new_end = stlAlg::search(begin1,end1,begin2,end2);
             if(new_end == end){
                 break;
             }
@@ -144,7 +144,7 @@ namespace stlAlg{
 
         InputIt1 end = end1;
         while(true){
-            InputIt1 new_end = stlAlg::search(InputIt1 begin1,InputIt1 end1,InputIt2 begin2,InputIt2 end2,p);
+            InputIt1 new_end = stlAlg::search(begin1,end1,begin2,end2,p);
             if(new_end == end){
                 break;
             }
