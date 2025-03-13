@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include "atlAlg.h"
+#include "stlAlg.h"
 
 int main() {
     std::vector<int> vec1 = {1, 2, 3, 4, 5};
@@ -47,6 +47,13 @@ int main() {
     auto it4 = stlAlg::find_end(vec1.begin(), vec1.end(), vec2.begin(), vec2.end());
     if (it4 != vec1.end()) {
         std::cout << "Last occurrence of subsequence found starting at position: " << std::distance(vec1.begin(), it4) << std::endl;
+    } else {
+        std::cout << "Last occurrence of subsequence not found" << std::endl;
+    }
+
+    auto it5 = stlAlg::find_end(vec1.begin(), vec1.end(), vec2.begin(), vec2.end(), [](int a, int b) { return a == b; });
+    if (it5 != vec1.end()) {
+        std::cout << "Last occurrence of subsequence found starting at position: " << std::distance(vec1.begin(), it5) << std::endl;
     } else {
         std::cout << "Last occurrence of subsequence not found" << std::endl;
     }
