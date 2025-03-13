@@ -5,6 +5,7 @@
         "ranges": "cpp",
         "span": "cpp",
         "xmemory": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "algorithm": "cpp"
     }
 }
