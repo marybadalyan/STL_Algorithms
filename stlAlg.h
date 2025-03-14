@@ -21,7 +21,17 @@ namespace stlAlg{
         return find_if_not(begin,end,p) == end;
     }
     
-   
+    
+    template <class InputIt,class Value>
+    constexpr InputIt find(InputIt begin,InputIt end, const Value& val){
+        for(;begin!=end;++begin){
+            if(*begin == val){
+                return begin;
+            }
+        }
+        return end;
+    }
+
     template <class InputIt,class Predicate>
     constexpr InputIt find_if(InputIt begin,InputIt end, Predicate p){
         for(;begin!=end;++begin){
@@ -141,4 +151,25 @@ namespace stlAlg{
         }
         return result;
     }
+    template <class InputIt1, class InputIt2>
+    constexpr InputIt1 find_first_of_find(InputIt1 start1, InputIt1 end1,InputIt2 start2,InputIt2 end2){
+        for(InputIt1 it = start1;it != end1;++it){
+            if(stlAlg::find(start2,end2,*it) != end2){
+                return it;
+            }
+        }
+        return end1;
+    }
+    template <class InputIt1, class InputIt2>
+    constexpr InputIt1 find_first_of(InputIt1 start1, InputIt1 end1,InputIt2 start2,InputIt2 end2){
+        for(;start1!=end1;++start1){
+            for(InputIt1 it = start2;it != end2;++it){
+                if(*it == *start1){
+                    return start1;
+                }
+            }
+        }
+        return end1;
+    }
+
 }
