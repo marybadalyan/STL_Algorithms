@@ -4,7 +4,7 @@
 
 int main() {
     std::vector<int> vec1 = {1, 2, 3, 4, 5};
-    std::vector<int> vec2 = {3, 4};
+    std::vector<int> vec2 = {3,4};
 
     // Test find_if_not
     auto it1 = stlAlg::find_if_not(vec1.begin(), vec1.end(), [](int i) { return i < 3; });
@@ -58,5 +58,17 @@ int main() {
         std::cout << "Last occurrence of subsequence not found" << std::endl;
     }
 
+    auto it6 = stlAlg::find_first_of(vec1.begin(), vec1.end(), vec2.begin(), vec2.end());
+    if (it6 != vec1.end()) {
+        std::cout << "Last occurrence of subsequence found starting at position: " << std::distance(vec1.begin(), it6) << std::endl;
+    } else {
+        std::cout << "Last occurrence of subsequence not found" << std::endl;
+    }
+    auto it7 = stlAlg::find_first_of_find(vec1.begin(), vec1.end(), vec2.begin(), vec2.end());
+    if (it7 != vec1.end()) {
+        std::cout << "Last occurrence of subsequence found starting at position: " << std::distance(vec1.begin(), it7) << std::endl;
+    } else {
+        std::cout << "Last occurrence of subsequence not found" << std::endl;
+    }
     return 0;
 }
